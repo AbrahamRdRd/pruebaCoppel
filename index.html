@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
+    <title>Coppel</title>
+</head>
+<body>
+    <div class="encabezado">
+        <div>
+            <h1 class="title">Coppel Tienda</h1>
+        </div>
+        <div>
+            <img src="https://img.icons8.com/ios-glyphs/30/null/minus-math.png"  />
+            <img src="https://img.icons8.com/windows/32/null/maximize-button.png"  />
+            <img src="https://img.icons8.com/windows/32/null/close-window.png" />
+        </div>
+    </div>  
+
+    <form id="form" class="form">
+        <div class="sku-div">
+            <label for="sku">
+                <p>SKU:</p>
+                <input id="sku" type="text" name="sku" />
+            </label> <br/>
+            <label for="descontinuado-check">
+                <input id="descontinuado-check" type="checkbox" name="sku" />
+                <p>Descontinuado</p>     
+            </label> <br/>
+        </div>  <br/>
+        <label for="articulo">
+            <p>Articulo:</p> 
+            <input id="articulo" type="text" name="articulo" />
+        </label> <br/>
+        <label for="marca">
+            <p>Marca:</p>
+            <input id="marca" type="text" name="marca" />
+        </label><br/>
+        <label for="modelo">
+            <p>Modelo:</p>
+            <input id="modelo" type="text" name="modelo" />
+        </label><br/>
+        <label for="departamento">
+            <p>Departamento:</p> 
+            <select id="departamento" class="departamento">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+        </label><br/>
+        <label for="clase">
+            <p>Clase:</p>
+            <select id="clase" class="clase">
+                <option value="12">12</option>
+                <option value="23">23</option>
+                <option value="34">34</option>
+                <option value="45">45</option>
+                <option value="56">56</option>
+            </select>
+        </label><br/>
+        <label for="familia">
+            <p>Familia:</p>
+            <select id="familia" class="familia">
+                <option value="123">123</option>
+                <option value="234">234</option>
+                <option value="345">345</option>
+                <option value="456">456</option>
+                <option value="567">567</option>
+            </select>
+        </label><br/>
+        <div class="stock-div">     
+            <label for="stock">
+                <p>Stock:</p>
+                <input id="stock" type="text" name="Stock" />
+            </label>
+            <label for="cantidad">
+                <p>Cantidad:</p>
+                <input id="cantidad" type="text" name="cantidad" />
+            </label><br/>
+            </div> <br/>
+        <div class="fecha-mov">
+            <label for="fecha-alta">
+                <p>Fecha Alta:</p>
+                <input id="fecha-alta" type="date" name="fecha-alta" />
+            </label>
+            <label for="fecha-baja">
+                <p>Fecha Baja:</p>
+                <input id="fecha-baja" type="date" name="fecha-baja" />
+            </label><br/>
+            </div>  <br/>
+        <button onclick="btnFunction()" class="btn-form" value="Enviar">Enviar</button>
+    </form>
+
+</body>
+<script src="./main.js"></script>
+</html>

@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Oxygen:wght@300&display=swap');
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: 'Oxygen', sans-serif;
+}
+
+form{
+    max-width: 475px;
+    border: 1px solid blue;
+    padding: 15px;
+    font-size: 14px;
+}
+
+form > label{
+    display: flex;
+    justify-content: flex-start;
+}
+
+form > label input{
+    width: 100%;
+    border: 2px solid rgb(159, 159, 159);
+}
+
+.encabezado{
+    border: 1px solid black;
+    max-width: 475px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    background-color: #80808047;
+}
+
+.encabezado div:last-child{
+    margin-right: 15px;
+    padding-top: 5px;
+}
+
+.encabezado div img{
+    cursor: pointer;
+}
+
+.title{
+    font-size: 18px;
+    padding-bottom: 7px;
+    margin-left: 15px;
+}
+
+.stock-div,
+.sku-div,
+.fecha-mov{
+    display: flex;
+    justify-content: space-between;
+}
+
+.stock-div label,
+.fecha-mov label{
+    display: flex;
+    justify-content: space-between;
+}
+
+.sku-div label{
+    display: flex;
+    justify-content: center;
+}
+
+.stock-div input{
+    width: 120px;
+    border: 2px solid rgb(159, 159, 159);
+}
+
+.stock-div label p,
+.fecha-mov label p{
+    width: 97px;
+}
+
+form > label p{
+    width: 125px;
+}
+
+.sku-div label:first-child input{
+    width: 100px;
+}
+
+.sku-div label:first-child p{
+    width: 97px;
+}
+
+.sku-div label input{
+    margin-right: 10px;
+    border: 2px solid rgb(159, 159, 159);
+}
+
+.btn-form{
+    padding: 4px 16px 4px 16px;
+    margin-left: 82%;
+}
+
+.departamento,
+.familia,
+.clase{
+    width: 100%;
+}

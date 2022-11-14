@@ -66,6 +66,14 @@ form > label input{
     justify-content: space-between;
 }
 
+input,
+select{
+    padding: 3px 0 3px 5px;
+    border-radius: 5px;
+    align-self: center;
+    margin-left: 5px;
+}
+
 .sku-div label{
     display: flex;
     justify-content: center;
@@ -74,12 +82,17 @@ form > label input{
 .stock-div input{
     width: 120px;
     border: 2px solid rgb(159, 159, 159);
+    padding: 3px 0 3px 5px;
+    border-radius: 5px;
 }
 
 .stock-div label p,
 .fecha-mov label p{
-    width: 97px;
+    width: 87px;
+    align-self: cente;
+    margin-left: 6px;
 }
+
 
 form > label p{
     width: 125px;
@@ -103,10 +116,15 @@ form > label p{
     margin-left: 82%;
 }
 
-.btn-form-delete {
+.btn-form-delete,
+.btn-form-update {
     padding: 4px 16px 4px 16px;
     position: relative;
     bottom: 25px;
+}
+
+.btn-form-update{
+    margin-left: 20px;
 }
 
 .inactive{

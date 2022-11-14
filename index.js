@@ -5,7 +5,7 @@ var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
 var yyyy = today.getFullYear();
 
 today = yyyy + '-' + mm + '-' + dd;
-console.log(today);
+//console.log(today);
 
 var objForm = [{
     sku: 13245,
@@ -22,6 +22,21 @@ var objForm = [{
     fechaBaja : "1900-01-01"
 }];
 
+objForm.push({  
+    sku: 44433,
+    descontinuado: false,
+    articulo: "Celular",
+    marca: "Huawei",
+    modelo: "antiguo",
+    departamento: 1,
+    clase : 12,
+    familia : 123,
+    stock : 50,
+    cantidad : 10,
+    fechaAlta : today,
+    fechaBaja : "1900-01-01"})
+
+
 //---------- getting values of the inputs ---------------//
 const getForm = document.querySelector("#form");
 const getSku = document.querySelector("#sku");  
@@ -36,22 +51,39 @@ const getStock = document.querySelector("#stock");
 const getQuantity = document.querySelector("#cantidad");
 const getDateUp = document.querySelector("#fecha-alta");
 const getDateDown = document.querySelector("#fecha-baja");
-const getBtnDelete = document.querySelector(".btn-form-delete");
 
-console.log(getDateDown.value);
+const getBtnDelete = document.querySelector(".btn-form-delete");
+const getBtnUpdate = document.querySelector(".btn-form-update");
 
 getForm.addEventListener("submit", btnFunction)
 
+function compareQuantityVsStock(){
+    if(getStock.value >= getQuantity.value){
+        return 0;
+    } else {
+        return alert("La cantidad no debe superar el Stock");
+    }
+}
+
+function isSkuEmpty(){
+    if(sku.value == ""){
+        return alert("No hay SKU capturado");
+    }
+}
 
 function btnFunction(event){
     event.preventDefault();
+    compareQuantityVsStock(); 
+    isSkuEmpty();
+
         if(objForm[0].sku == parseInt(getSku.value)){
             alert("Este SKU ya existe. Favor de ingresar otro");
-            
+
             getArticule.value = objForm[0].articulo;
             getDepartment.value = objForm[0].departamento;
             getFamily.value = objForm[0].familia;
             getStock.value = objForm[0].stock;
+            getClase.value = objForm[0].clase;
             getQuantity.value = objForm[0].cantidad;
             getBrand.value = objForm[0].marca;
             getModel.value = objForm[0].modelo;
@@ -67,9 +99,8 @@ function btnFunction(event){
             getBrand.setAttribute("disabled", "");
             getModel.setAttribute("disabled", "");
             
-            getClase.value = objForm.clase;
             getBtnDelete.classList.remove("inactive");
-
+            getBtnUpdate.classList.remove("inactive");
             //objForm.pop();
         
             } else {
@@ -93,29 +124,25 @@ function btnFunction(event){
             //console.log(getBrand.value, "brand");
             //console.log(getModel.value, "model");
             //console.log(getDateDown.value, "fecha baja");*/
-            
-            isFormEmpty(getArticule, getModel);
+            isFormEmpty();
         }
 }
 
-function isFormEmpty(getArticule, getModel){
-    if(getArticule.disabled){
-        //objForm.push({
-        //    sku : parseInt(getSku.value),
-        //    clase: getClase.value,
-        //    articulo: getArticule.value,
-        //    departamento: getDepartment.value,
-        //    familia: getFamily.value,
-        //    stock: getStock.value,
-        //    cantidad: getQuantity.value,
-        //    marca: getBrand.value,
-        //    modelo: getModel.value,
-        //    fechaAlta: today, 
-        //    fechaBaja: "1900-01-01",
-        //});
+function isFormEmpty(){
+        objForm.push({
+            sku : parseInt(getSku.value),
+            clase: getClase.value,
+            articulo: getArticule.value,
+            departamento: getDepartment.value,
+            familia: getFamily.value,
+            stock: getStock.value,
+            cantidad: getQuantity.value,
+            marca: getBrand.value,
+            modelo: getModel.value,
+            fechaAlta: today, 
+            fechaBaja: "1900-01-01",
+        });
     }
-
-}
 
 
 function btnDeleteFunction(event){
@@ -129,5 +156,19 @@ function btnDeleteFunction(event){
     getBrand.setAttribute("disabled", "");
     getModel.setAttribute("disabled", "");
     confirm("¿Estás seguro que quieres eliminar este elemento?")
+
+    console.log(getSku.value)
 }
 
+function btnUpdateFunction(event){
+    event.preventDefault();
+    getClase.removeAttribute("disabled");
+    getArticule.removeAttribute("disabled");
+    getDepartment.removeAttribute("disabled");
+    getFamily.removeAttribute("disabled");
+    getStock.removeAttribute("disabled");
+    getQuantity.removeAttribute("disabled");
+    getBrand.removeAttribute("disabled");
+    getModel.removeAttribute("disabled");
+    getCheck.removeAttribute("disabled");
+}

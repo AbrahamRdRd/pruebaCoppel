@@ -1,0 +1,26 @@
+{
+  "name": "pruebacoppel",
+  "version": "1.0.0",
+  "description": "Prueba técnica coppel",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AbrahamRdRd/pruebaCoppel.git"
+  },
+  "author": "AbrahamRdzRdz <ing.abraham.rodriguez@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AbrahamRdRd/pruebaCoppel/issues"
+  },
+  "homepage": "https://github.com/AbrahamRdRd/pruebaCoppel#readme",
+  "dependencies": {
+    "body-parser": "^1.20.1",
+    "ejs": "^3.1.8",
+    "express": "^4.18.2",
+    "mysql": "^2.18.1",
+    "mysql2": "^2.3.3"
+  }
+}

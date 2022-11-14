@@ -19,32 +19,33 @@
         </div>
     </div>  
 
-    <form id="form" class="form">
+    <form id="form" class="form" action="">
         <div class="sku-div">
             <label for="sku">
                 <p>SKU:</p>
                 <input id="sku" type="text" name="sku" />
             </label> <br/>
             <label for="descontinuado-check">
-                <input id="descontinuado-check" type="checkbox" name="sku" />
+                <input id="descontinuado-check" class="descontinuado-check" type="checkbox" name="sku" disabled/>
                 <p>Descontinuado</p>     
             </label> <br/>
         </div>  <br/>
         <label for="articulo">
             <p>Articulo:</p> 
-            <input id="articulo" type="text" name="articulo" />
+            <input id="articulo" type="text" name="articulo" disabled/>
         </label> <br/>
         <label for="marca">
             <p>Marca:</p>
-            <input id="marca" type="text" name="marca" />
+            <input id="marca" type="text" name="marca" disabled/>
         </label><br/>
         <label for="modelo">
             <p>Modelo:</p>
-            <input id="modelo" type="text" name="modelo" />
+            <input id="modelo" type="text" name="modelo" disabled/>
         </label><br/>
         <label for="departamento">
             <p>Departamento:</p> 
-            <select id="departamento" class="departamento">
+            <select id="departamento" class="departamento" disabled>
+                <option value="0">None</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -54,7 +55,8 @@
         </label><br/>
         <label for="clase">
             <p>Clase:</p>
-            <select id="clase" class="clase">
+            <select id="clase" class="clase" disabled>
+                <option value="0">None</option>
                 <option value="12">12</option>
                 <option value="23">23</option>
                 <option value="34">34</option>
@@ -64,7 +66,8 @@
         </label><br/>
         <label for="familia">
             <p>Familia:</p>
-            <select id="familia" class="familia">
+            <select id="familia" class="familia" disabled>
+                <option value="0">None</option>
                 <option value="123">123</option>
                 <option value="234">234</option>
                 <option value="345">345</option>
@@ -75,26 +78,27 @@
         <div class="stock-div">     
             <label for="stock">
                 <p>Stock:</p>
-                <input id="stock" type="text" name="Stock" />
+                <input id="stock" type="text" name="Stock" disabled/>
             </label>
             <label for="cantidad">
                 <p>Cantidad:</p>
-                <input id="cantidad" type="text" name="cantidad" />
+                <input id="cantidad" type="text" name="cantidad" disabled/>
             </label><br/>
             </div> <br/>
         <div class="fecha-mov">
             <label for="fecha-alta">
                 <p>Fecha Alta:</p>
-                <input id="fecha-alta" type="date" name="fecha-alta" />
+                <input id="fecha-alta" type="date" name="fecha-alta" disabled/>
             </label>
             <label for="fecha-baja">
                 <p>Fecha Baja:</p>
-                <input id="fecha-baja" type="date" name="fecha-baja" />
+                <input id="fecha-baja" type="date" name="fecha-baja" disabled/>
             </label><br/>
             </div>  <br/>
-        <button onclick="btnFunction()" class="btn-form" value="Enviar">Enviar</button>
+        <button onclick="btnFunction(event)" class="btn-form btn" value="Enviar">Enviar</button>
+        <button onclick="btnDeleteFunction(event)" class="btn-form-delete btn inactive" value="Borrar">Borrar</button>
     </form>
 
 </body>
-<script src="./main.js"></script>
+<script src="./index.js"></script>
 </html>
